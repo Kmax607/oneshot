@@ -235,6 +235,16 @@ a, button {
     gap: 20px;
 }
 
+.film-hero img {
+    max-width: 650px;  /* keeps posters at a consistent width */
+    max-height: 950px; /* optional: prevents very tall images */
+    width: 100%;       /* scales down responsively */
+    height: auto;      /* keeps aspect ratio */
+    border-radius: 8px;
+    flex: 1 1 300px;
+    object-fit: contain;
+}
+
 .film-card {
     cursor: pointer;
     transition: transform 0.3s;

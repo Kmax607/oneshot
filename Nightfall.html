@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nightfall - One Shot Entertainment</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="One Shot Logo Formatted.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .film-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .film-hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      flex: 1 1 300px;
+    }
+
+    .film-info {
+      flex: 2 1 300px;
+    }
+
+    .film-info h1 {
+      font-size: 3rem;
+      color: #e50914;
+      margin-bottom: 1rem;
+    }
+
+    .metadata {
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .description, .tagline, .cast, .genres {
+      margin: 1rem 0;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #e50914;
+    }
+
+    .similar-section {
+      margin-top: 4rem;
+    }
+
+    .similar-section h2 {
+      color: #e50914;
+      margin-bottom: 1rem;
+    }
+
+    .similar-posters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .similar-posters img {
+      width: 160px;
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .film-stills img {
+      max-width: 320px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      object-fit: contain;
+    }
+
+
+    @media (max-width: 768px) {
+      .film-hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo" onclick="location.href='index.html'">
+    <img src="One Shot Logo Formatted.png" alt="One Shot Logo" class="logo-img">
+  </div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav class="nav-links" id="nav-links">
+    <a href="OurStory.html">Our Story</a>
+    <a href="OurTeam.html">Our Team</a>
+    <a href="OurFilms.html">Our Films</a>
+    <a href="OurGoals.html">Our Goals</a>
+  </nav>
+</header>
+
+<main class="main-container">
+  <section class="film-hero fade-in">
+    <img src="nightfall_poster2.png" alt="Nightfall Poster">
+    <div class="film-info">
+      <h1>Nightfall</h1>
+      <a href="https://www.youtube.com/" class="play-text">Play</a>
+      <div class="metadata">2025 &bull; 6m &bull; <strong>PG-13</strong> Sequences of intense action</div>
+      <div class="metadata">Directed by Tristan Robertson and Kieran Sherry</div>
+      <div class="description">A vengeful Nightwing springs into action in the wake of Batman’s death.</div>
+      <div class="tagline">A dark night for Gotham’s second son.</div>
+      <div class="cast"><strong>Cast:</strong> Kieran Sherry, Josh Relyea, Jason Sherry</div>
+      <div class="genres"><strong>Genres:</strong> Action, Superhero, Revenge-flick</div>
+      <section class="film-stills">
+        <img src="NF%20still%203.png" alt="Nightfall Still 1">
+        <img src="NF%20still%202.png" alt="Nightfall Still 2">
+        <img src="NF%20still%201.png" alt="Nightfall Still 3">
+      </section>
+    </div>
+  </section>
+
+  <section class="similar-section fade-in">
+    <h2>Similar To:</h2>
+    <div class="similar-posters">
+      <img src="redhood.webp" alt="Red Hood">
+      <img src="johnwick.jpg" alt="John Wick">
+      <img src="rop.jpg" alt="Road to Perdition">
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2025 One Shot Entertainment</p>
+  <div class="socials">
+    <a href="https://www.instagram.com/one.shotentertainment/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@oneshotentertainment00" target="_blank">YouTube</a>
+    <a href="https://x.com/1shot00" target="_blank">Twitter</a>
+    <a href="https://www.tiktok.com/@one.shotentertainment" target="_blank">TikTok</a>
+    <a href="mailto:oneshotentertainment00@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>
