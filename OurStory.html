@@ -8,30 +8,71 @@
     <link rel="icon" href="One Shot Logo Formatted.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf9f6;
+            color: #000000;
+            margin: 0;
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: none;
         }
 
         .story-section {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
+        .story-block {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 3rem 0;
+            gap: 2rem;
+        }
+        .story-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .story-text {
+            flex: 1 1 400px;
+        }
+        .story-text p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
         .story-image {
+            flex: 1 1 400px;
+            max-width: 500px;
             width: 100%;
-            max-width: 600px;
-            margin: 1.5rem auto;
-            display: block;
             border-radius: 10px;
             border: 2px solid #e50914;
+        }
+
+        h1.red-heading {
+            text-align: center;
+            color: #e50914;
+            font-size: 3rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .story-block {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .story-text {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -56,20 +97,35 @@
     <h1 class="red-heading fade-in">Our Story</h1>
 
     <section class="story-section">
-        <p class="fade-in">From our very first days as friends back in kindergarten, the three of us have been telling stories. As inaugural members of the ‘Haunted House Club’, we chased ghosts during recess, passed on terrifying tales, and uncovered the secrets of the school basement. On the battlefield (or backyard), we partook in hours-long epics, inspired by our favorite superheroes, Jedi, and Transformers, with unrelenting zombies and evil little siblings proving mighty opponents. Our weekends were filled with the likes of DreamWorks, Pixar, Cartoon Network, and Disney, all of which fueled our wild imaginations with creative inspiration. </p>
-        <img src="kindergarten.jpg" alt="Kindergarten Days" class="story-image fade-in" />
 
-        <p class="fade-in">By middle school, we had upgraded to a professional production company and had brought to life a series of short films, like our debut, “Transformers are Real,” the perpetually underrated “Paradox,” and the dramatic saga, “The Mystery of Mineral,” parts one and two. With a small but mighty YouTube following, and with the help of some incredibly devoted parents, our middle school days were spent writing and shooting anything our brains could cook up. We tried our hand at a comedic buddy cop romp, a time-traveling epic, a dramatic mini-franchise of our own, and a meta, genre-switching exploration of cinema history. Our hard work paid off in a big way when our film “Pick Again” was awarded ‘Best High School Student Film,’ beating out dozens of high-school age competitors while we were only in eighth grade.</p>
-        <img src="middle.jpg" alt="Middle School Projects" class="story-image fade-in" />
+        <div class="story-block fade-in">
+            <div class="story-text">
+                <p>From our very first days as friends back in kindergarten, the three of us have been telling stories. As inaugural members of the ‘Haunted House Club’, we chased ghosts during recess, passed on terrifying tales, and uncovered the secrets of the school basement. On the battlefield (or backyard), we partook in hours-long epics, inspired by our favorite superheroes, Jedi, and Transformers, with unrelenting zombies and evil little siblings proving mighty opponents. Our weekends were filled with the likes of DreamWorks, Pixar, Cartoon Network, and Disney, all of which fueled our wild imaginations with creative inspiration. </p>
+            </div>
+            <img src="kindergarten.jpg" alt="Kindergarten Days" class="story-image"/>
+        </div>
 
-        <p class="fade-in">As we garnered more and more experience, our quality began to improve. We started focusing on the truly important stuff, like conveying emotions through dialogue and really telling a story through film, instead of just cool concepts and fun settings. At sleepovers, we watched horror movie after horror movie, marveling at each one that was able to totally terrify us, and trying to understand how, exactly, it had. Movies like Sinister and Hereditary left us shells of ourselves—and we loved it! Horror games like Resident Evil and Until Dawn enthralled us with their seamless blend of jump-scares and hair-raising reveals. Unsurprisingly, our friend group fell in love with physically going to the movies, which became a near-weekly occasion. Our trips to the cinema coincided with the peak of Marvel’s Cinematic Universe, brand-new Star Wars films, and the impossible-to-look-away-from DC Extended Universe. We came to realize that money didn’t make a movie great—its heart and soul did. </p>
-        <img src="beach.jpg" alt="Filmmaking Growth" class="story-image fade-in" />
+        <div class="story-block fade-in">
+            <div class="story-text">
+                <p>By middle school, we had upgraded to a professional production company and had brought to life a series of short films, like our debut, “Transformers are Real,” the perpetually underrated “Paradox,” and the dramatic saga, “The Mystery of Mineral,” parts one and two. With a small but mighty YouTube following, and with the help of some incredibly devoted parents, our middle school days were spent writing and shooting anything our brains could cook up. We tried our hand at a comedic buddy cop romp, a time-traveling epic, a dramatic mini-franchise of our own, and a meta, genre-switching exploration of cinema history. Our hard work paid off in a big way when our film “Pick Again” was awarded ‘Best High School Student Film,’ beating out dozens of high-school age competitors while we were only in eighth grade. </p>
+            </div>
+            <img src="middle.jpg" alt="Middle School Projects" class="story-image"/>
+        </div>
 
-        <p class="fade-in">As we ventured through high school, we pioneered a film club, where all students were invited to join us in learning everything we could about filmmaking, storytelling, and the challenges of translating an idea from script to screen. While it wasn’t always easy to work with newcomers, learning to collaborate with people outside our circle was vital in our growth as creatives. </p>
-        <img src="club.png" alt="Film Club" class="story-image fade-in" />
+        <div class="story-block fade-in">
+            <div class="story-text">
+                <p>As we garnered more and more experience, our quality began to improve. We started focusing on the truly important stuff, like conveying emotions through dialogue and really telling a story through film, instead of just cool concepts and fun settings. At sleepovers, we watched horror movie after horror movie, marveling at each one that was able to totally terrify us, and trying to understand how, exactly, it had. Movies like Sinister and Hereditary left us shells of ourselves—and we loved it! Horror games like Resident Evil and Until Dawn enthralled us with their seamless blend of jump-scares and hair-raising reveals. Unsurprisingly, our friend group fell in love with physically going to the movies, which became a near-weekly occasion. Our trips to the cinema coincided with the peak of Marvel’s Cinematic Universe, brand-new Star Wars films, and the impossible-to-look-away-from DC Extended Universe. We came to realize that money didn’t make a movie great—its heart and soul did.</p>
+            </div>
+            <img src="beach.jpg" alt="Filmmaking Growth" class="story-image"/>
+        </div>
 
-        <!--<p class="fade-in">KCCA screenings, movie Tuesdays, horror sleepovers at movies. We realized it wasn’t going to be a hobby...</p>
-        <img src="ourstory-photo5.png" alt="Recent Work" class="story-image fade-in" /!-->
+        <div class="story-block fade-in">
+            <div class="story-text">
+                <p>As we ventured through high school, we pioneered a film club, where all students were invited to join us in learning everything we could about filmmaking, storytelling, and the challenges of translating an idea from script to screen. While it wasn’t always easy to work with newcomers, learning to collaborate with people outside of our circle was vital in our growth as creatives. </p>
+            </div>
+            <img src="club.png" alt="Film Club" class="story-image"/>
+        </div>
+
     </section>
 </main>
 
