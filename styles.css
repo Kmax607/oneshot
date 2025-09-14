@@ -337,4 +337,109 @@ a, button {
     .menu-toggle {
         font-size: 1.5rem;
     }
+
+    .menu-toggle {
+        display: block;        /* Show the hamburger */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;             /* just below navbar */
+        right: 0;
+        background: #000;
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 1rem;
+        display: none;         /* hidden by default */
+    }
+
+    .nav-links.show {
+        display: flex;         /* show when toggled */
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        width: 100%;
+    }
 }
+
+/* Base reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-img { height: 50px; cursor: pointer; }
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.nav-links a:hover { color: #e50914; }
+
+/* --- Slide-down animation --- */
+@media (max-width: 600px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #000;
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+    .nav-links.show {
+        max-height: 500px;   /* enough to fit links */
+        opacity: 1;
+    }
+    .nav-links a {
+        padding: 0.5rem 0;
+        width: 100%;
+    }
+}
+
+/* Fade-in fix */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 2s, transform 2s; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }

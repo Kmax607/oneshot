@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
-    handleScrollFadeIn();
 
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
 });
 
 const text = "One Shot Entertainment";
@@ -14,13 +19,12 @@ function typeEffect() {
     const words = text.split(" ");
     let wordIndex = 0;
     let charIndex = 0;
-    let wordSpan = null;
+    let wordSpan;
 
     function typeNextChar() {
         const currentWord = words[wordIndex];
 
         if (charIndex === 0) {
-            // Create a new span for each word
             wordSpan = document.createElement("span");
             wordSpan.classList.add("word");
             title.appendChild(wordSpan);
@@ -42,9 +46,7 @@ function typeEffect() {
             charIndex = 0;
             wordIndex++;
             if (wordIndex < words.length) {
-                // Add non-breaking space between words
-                const space = document.createTextNode("\u00A0");
-                title.appendChild(space);
+                title.appendChild(document.createTextNode("\u00A0"));
                 setTimeout(typeNextChar, 100);
             }
         }
@@ -52,6 +54,3 @@ function typeEffect() {
 
     typeNextChar();
 }
-
-window.addEventListener("scroll", handleScrollFadeIn);
-window.addEventListener("load", handleScrollFadeIn);
